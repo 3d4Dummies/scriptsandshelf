@@ -1,0 +1,1909 @@
+global proc shelf_Rigging () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select an object(s)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Freeze Transformations" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "FT" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "FreezeTransformations" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select an object(s)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Center Pivot" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CP" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CenterPivot" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Delete construction history on the selected object(s)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "History" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Hist" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconEdit.png" 
+        -image1 "menuIconEdit.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "DeleteHistory" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "FreezeTransformations;\nCenterPivot;\nBakeNonDefHistory;" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "FreezeTransformations;\nCenterPivot;\nBakeNonDefHistory;" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "ALL" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "FreezeTransformations;\nCenterPivot;\nBakeNonDefHistory;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add a prefix to all hierarchy names" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Prefix Hierarchy Names..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "PHN" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "PrefixHierarchyNames" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Rename objects in scene" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Search and Replace Names..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "SaRN" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "performSearchReplaceNames 1" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Click to place joint. Click on existing joint to add to skeleton. Click-Drag to position joint." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Joint Tool" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinJoint.png" 
+        -image1 "kinJoint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "JointTool" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Create IK handle on joint chain" 
+        -enableBackground 1
+        -backgroundColor 1 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "IK Handle Tool" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "kinHandle.png" 
+        -image1 "kinHandle.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "IKHandleTool" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Create IK spline handle on joint chain" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "IK Spline Handle Tool" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinSplineHandle.png" 
+        -image1 "kinSplineHandle.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "IKSplineHandleTool" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select a joint to mirror" 
+        -enableBackground 1
+        -backgroundColor 0 1 1 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Mirror Joints" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "MIRROR" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "kinMirrorJoint_S.png" 
+        -image1 "kinMirrorJoint_S.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "mirrorJoint -mirrorYZ -mirrorBehavior -searchReplace \"L_\" \"R_\"" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Insert new joints into a joint chain" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Insert Joint Tool" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinInsert.png" 
+        -image1 "kinInsert.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "InsertJointTool" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select a joint" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Reroot Skeleton" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinReroot.png" 
+        -image1 "kinReroot.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "RerootSkeleton" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select a joint" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Remove Joint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinRemove.png" 
+        -image1 "kinRemove.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "RemoveJoint" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select a joint to disconnect" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Disconnect Joint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "kinDisconnect.png" 
+        -image1 "kinDisconnect.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "DisconnectJoint" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select a joint to orient" 
+        -enableBackground 1
+        -backgroundColor 1 1 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Orient Joint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "orientJoint.png" 
+        -image1 "orientJoint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "joint -e  -oj xyz -secondaryAxisOrient zup -ch" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select surface(s) and a joint." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Smooth Bind" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "SmoBind" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "smoothSkin.png" 
+        -image1 "smoothSkin.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "SmoothBindSkin" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select skinned surface(s) and influence transform(s)." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Influence" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "AddInfl" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "addWrapInfluence.png" 
+        -image1 "addWrapInfluence.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "AddInfluence" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select surface(s)." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Detach Skin" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Det" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "detachSkin.png" 
+        -image1 "detachSkin.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "DetachSkin" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Paint weights on smooth bound skins." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Paint Skin Weights Tool" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "paintSkinWeights.png" 
+        -image1 "paintSkinWeights.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ArtPaintSkinWeightsTool" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "//Curve/Wireframe Color - Yellow\n\n//Find selection...\nstring $selClr[] = `ls -sl`;\n//For all objects in selection, run the following commands...\nfor ($all in $selClr){\n    //Enable color override...\n    setAttr ($all + \".overrideEnabled\") 1;\n    //Recolor curve/wireframe Yellow...\n    setAttr ($all + \".overrideColor\") 17;\n   \n}" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "//Curve/Wireframe Color - Yellow\n\n//Find selection...\nstring $se..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Yellow" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "//Curve/Wireframe Color - Yellow\n\n//Find selection...\nstring $selClr[] = `ls -sl`;\n//For all objects in selection, run the following commands...\nfor ($all in $selClr){\n    //Enable color override...\n    setAttr ($all + \".overrideEnabled\") 1;\n    //Recolor curve/wireframe Yellow...\n    setAttr ($all + \".overrideColor\") 17;\n   \n}" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "//Curve/Wireframe Color - Red\nstring $selClr[] = `ls -sl`;\n//For all objects in selection, run the following commands...\nfor ($all in $selClr){\n    //Enable color override...\n    setAttr ($all + \".overrideEnabled\") 1;\n    //Recolor curve/wireframe Red...\n    setAttr ($all + \".overrideColor\") 13;\n   \n}" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "//Curve/Wireframe Color - Red\nstring $selClr[] = `ls -sl`;\n//For..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Red" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "//Curve/Wireframe Color - Red\nstring $selClr[] = `ls -sl`;\n//For all objects in selection, run the following commands...\nfor ($all in $selClr){\n    //Enable color override...\n    setAttr ($all + \".overrideEnabled\") 1;\n    //Recolor curve/wireframe Red...\n    setAttr ($all + \".overrideColor\") 13;\n   \n}" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "//Curve/Wireframe Color - Blue\nstring $selClr[] = `ls -sl`;\n//For all objects in selection, run the following commands..\nfor ($all in $selClr){\n    //Enable color override...\n    setAttr ($all + \".overrideEnabled\") 1;\n    //Recolor curve/wireframe Blue...\n    setAttr ($all + \".overrideColor\") 6;\n   \n}" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "//Curve/Wireframe Color - Blue\nstring $selClr[] = `ls -sl`;\n//Fo..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Blue" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "//Curve/Wireframe Color - Blue\nstring $selClr[] = `ls -sl`;\n//For all objects in selection, run the following commands..\nfor ($all in $selClr){\n    //Enable color override...\n    setAttr ($all + \".overrideEnabled\") 1;\n    //Recolor curve/wireframe Blue...\n    setAttr ($all + \".overrideColor\") 6;\n   \n}" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "//LAT - Locator Alignment Tool\n\n//Find selection...\nstring $selLocAlign[] = `ls -sl`;\n//For all objects in selection, run the following commands...\nfor ($allNodes in $selLocAlign){\n    //Create a locator...\n    string $lc[] = `spaceLocator`;\n    //Align the locator to the first selection via a Parent Constraint...\n    string $prtCs_lc[] = `parentConstraint $allNodes $lc[0]`;\n    //Find and delete the locator's Parent Constraint...\n    string $find_prtCs_lc[] = `listRelatives -type parentConstraint $lc[0]`; delete $find_prtCs_lc[0];\n    //Rename the locator: \"locAlign_\" + the name of selected object(s)...\n    string $rnm_lc = `rename $lc[0] (\"locAlign_\" + $allNodes)`;\n    //Clear selection...\n    select -cl;\n}" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "//LAT - Locator Alignment Tool\n\n//Find selection...\nstring $selL..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "LocAlign" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "//LAT - Locator Alignment Tool\n\n//Find selection...\nstring $selLocAlign[] = `ls -sl`;\n//For all objects in selection, run the following commands...\nfor ($allNodes in $selLocAlign){\n    //Create a locator...\n    string $lc[] = `spaceLocator`;\n    //Align the locator to the first selection via a Parent Constraint...\n    string $prtCs_lc[] = `parentConstraint $allNodes $lc[0]`;\n    //Find and delete the locator's Parent Constraint...\n    string $find_prtCs_lc[] = `listRelatives -type parentConstraint $lc[0]`; delete $find_prtCs_lc[0];\n    //Rename the locator: \"locAlign_\" + the name of selected object(s)...\n    string $rnm_lc = `rename $lc[0] (\"locAlign_\" + $allNodes)`;\n    //Clear selection...\n    select -cl;\n}" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "//MRT - mirror object(s).\n\n//Find selection...\nstring $mirSel[] = `ls -sl`;\n//Make sure objects are selected...\nif (size($mirSel) == 0){\n    warning \"Select the object(s) to mirror!\";\n} else {\n    //Duplicate object(s)...\n    duplicate -rr;\n    //Group object(s) and place the pivot of the group at the origin...\n    string $wGrp = `group`;\n    xform -os -piv 0 0 0;\n    //Mirror the objects by scaling the group -1 in the X axis...\n    setAttr ($wGrp + \".sx\") -1;\n    //Ungroup object(s)...\n    select $wGrp; ungroup;\n    //Freeze the transformations of the object(s)...\n    makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n}" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "//MRT - mirror object(s).\n\n//Find selection...\nstring $mirSel[] ..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Mirror" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "//MRT - mirror object(s).\n\n//Find selection...\nstring $mirSel[] = `ls -sl`;\n//Make sure objects are selected...\nif (size($mirSel) == 0){\n    warning \"Select the object(s) to mirror!\";\n} else {\n    //Duplicate object(s)...\n    duplicate -rr;\n    //Group object(s) and place the pivot of the group at the origin...\n    string $wGrp = `group`;\n    xform -os -piv 0 0 0;\n    //Mirror the objects by scaling the group -1 in the X axis...\n    setAttr ($wGrp + \".sx\") -1;\n    //Ungroup object(s)...\n    select $wGrp; ungroup;\n    //Freeze the transformations of the object(s)...\n    makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n}" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "//APT - Align Position Tool: aligns the position of the object selected last...\n\n//Query last selected object...\nstring $selLast[] = `ls -sl -tl 1`;\n//Point Constrain to selection...\nstring $ptCns[] = `pointConstraint`;\n//Find and delete Point Constraint...\nstring $findPtCns[] = `listRelatives -type pointConstraint $selLast[0]`;\ndelete $findPtCns[0];\n//Select last selected object...\nselect $selLast[0];" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "//APT - Align Position Tool: aligns the position of the object s..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Allign" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "//APT - Align Position Tool: aligns the position of the object selected last...\n\n//Query last selected object...\nstring $selLast[] = `ls -sl -tl 1`;\n//Point Constrain to selection...\nstring $ptCns[] = `pointConstraint`;\n//Find and delete Point Constraint...\nstring $findPtCns[] = `listRelatives -type pointConstraint $selLast[0]`;\ndelete $findPtCns[0];\n//Select last selected object...\nselect $selLast[0];" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "////Parent Shape Tool\n\n//Query selection...\nstring $selObj[] = `ls -sl`;\n//Check selection.  2 or more objects must be selected or we'll get a warning...\nif (size($selObj) == 1){\n    warning \"Must select 2 or more objects...\";\n} else if (size($selObj) >= 2){\n    //Find the last selection...\n    string $sel_end[] = `ls -sl -tl 1`;\n    //Select all objects and deselect the last selection, which is the Parent object...\n    select $selObj ;  select -tgl $sel_end;\n    //Find the new selection: the child object(s)...\n    string $sel_children[] = `ls -sl`;\n    //Parent all selected objects to the last selection...\n    parent $sel_children $sel_end;\n   for ($allObjs in $sel_children){\n        //Select the child object(s) and Freeze Transformations...\n        select $allObjs; makeIdentity -apply 1 -t 1 -r 1 -s 1;\n        //Find the Shape node(s) of the child object(s)...\n        string $findShp[] = `listRelatives -shapes $allObjs`;\n        //Parent the Shape node(s) of the child object(s) to the last selection...\n        parent -r -s $findShp[0] $sel_end;\n        //Delete the Transform node(s) of the child object(s)...\n        delete $allObjs;\n        //Select the last selection: the parent object.\n        select $sel_end;\n        }\n}" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "////Parent Shape Tool\n\n//Query selection...\nstring $selObj[] = `..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "ParShape" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "////Parent Shape Tool\n\n//Query selection...\nstring $selObj[] = `ls -sl`;\n//Check selection.  2 or more objects must be selected or we'll get a warning...\nif (size($selObj) == 1){\n    warning \"Must select 2 or more objects...\";\n} else if (size($selObj) >= 2){\n    //Find the last selection...\n    string $sel_end[] = `ls -sl -tl 1`;\n    //Select all objects and deselect the last selection, which is the Parent object...\n    select $selObj ;  select -tgl $sel_end;\n    //Find the new selection: the child object(s)...\n    string $sel_children[] = `ls -sl`;\n    //Parent all selected objects to the last selection...\n    parent $sel_children $sel_end;\n   for ($allObjs in $sel_children){\n        //Select the child object(s) and Freeze Transformations...\n        select $allObjs; makeIdentity -apply 1 -t 1 -r 1 -s 1;\n        //Find the Shape node(s) of the child object(s)...\n        string $findShp[] = `listRelatives -shapes $allObjs`;\n        //Parent the Shape node(s) of the child object(s) to the last selection...\n        parent -r -s $findShp[0] $sel_end;\n        //Delete the Transform node(s) of the child object(s)...\n        delete $allObjs;\n        //Select the last selection: the parent object.\n        select $sel_end;\n        }\n}" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "////RJT - reorients all selected joints.\n\n//Query selection....\nstring $selJnt[] = `ls -sl -type joint`;\n//For all selected joints, do the following...\nfor ($allJnts in $selJnt){\n//Find the rotional values of selected joints...\nfloat $get_jnt_rx = `getAttr ($allJnts + \".rx\")`;\nfloat $get_jnt_ry = `getAttr ($allJnts + \".ry\")`;\nfloat $get_jnt_rz = `getAttr ($allJnts + \".rz\")`;\n//Set each joint's Orient value to its Rotate value...\nsetAttr ($allJnts + \".jointOrientX\") $get_jnt_rx;\nsetAttr ($allJnts + \".jointOrientY\") $get_jnt_ry;\nsetAttr ($allJnts + \".jointOrientZ\") $get_jnt_rz;\n//Set each joint's Rotate value to zero...\nsetAttr ($allJnts + \".rx\") 0;\nsetAttr ($allJnts + \".ry\") 0;\nsetAttr ($allJnts + \".rz\") 0;\n}" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "////RJT - reorients all selected joints.\n\n//Query selection....\n..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "JntOrient" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "////RJT - reorients all selected joints.\n\n//Query selection....\nstring $selJnt[] = `ls -sl -type joint`;\n//For all selected joints, do the following...\nfor ($allJnts in $selJnt){\n//Find the rotional values of selected joints...\nfloat $get_jnt_rx = `getAttr ($allJnts + \".rx\")`;\nfloat $get_jnt_ry = `getAttr ($allJnts + \".ry\")`;\nfloat $get_jnt_rz = `getAttr ($allJnts + \".rz\")`;\n//Set each joint's Orient value to its Rotate value...\nsetAttr ($allJnts + \".jointOrientX\") $get_jnt_rx;\nsetAttr ($allJnts + \".jointOrientY\") $get_jnt_ry;\nsetAttr ($allJnts + \".jointOrientZ\") $get_jnt_rz;\n//Set each joint's Rotate value to zero...\nsetAttr ($allJnts + \".rx\") 0;\nsetAttr ($allJnts + \".ry\") 0;\nsetAttr ($allJnts + \".rz\") 0;\n}" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select one or more targets followed by the object to constrain." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Parent" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "PC" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "parentConstraint.png" 
+        -image1 "parentConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "doCreateParentConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 36
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select one or more targets followed by the object to constrain." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Orient" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "OC" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "orientConstraint.png" 
+        -image1 "orientConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "doCreateOrientConstraintArgList 1 { \"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select one or more targets followed by the object to constrain." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Scale" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "SC" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "scaleConstraint.png" 
+        -image1 "scaleConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "doCreateScaleConstraintArgList 1 { \"0\",\"1\",\"1\",\"1\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select one or more targets followed by the Rotate Plane ikHandle to constrain." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Pole Vector" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "poleVectorConstraint.png" 
+        -image1 "poleVectorConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "poleVectorConstraint -weight 1" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Import assets into the scene" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Content Browser" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CB" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Modeling/Sculpting Base Meshes/Animals\");" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "List the objects in the scene" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Outliner" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Outl" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "OutlinerWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Display and edit relationships among nodes in your scene graphically using the hierarchical view" 
+        -enableBackground 1
+        -backgroundColor 1 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Hypergraph: Hierarchy" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Hgph" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "HypergraphHierarchyWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "This will zero out your Mesh or control" 
+        -enableBackground 1
+        -backgroundColor 0 1 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "// Zeros out all Visible/Keyable Attributes On Selected Object(s..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "ZERO" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "// Zeros out all Visible/Keyable Attributes On Selected Object(s)\n// Author: Jay Grenier, 2010\n// Last Update: May 6th, 2010\n// Notes: Source script, select object, hit button. Or, make a shelf button that calls jgZeroOutAttrsDo  For help email jay@jaygrenier.com\n\n\n// **********************************************************\n// Zeros out all Visible/Keyable Attributes On Select Object(s)\nglobal proc jgZeroOutAttrsDo () {\n    \n    // Get Selected\n    string $sel[] = `ls -sl` ;\n    \n    // Loop\n    for($item in $sel) {\n    \n        // Get All Attributes\n        string $attrs[] = `listAttr -v -k -s $item` ;\n        \n        // Zero Out (Not Visibility or Scale)\n        for ($attr in $attrs) {\n            if($attr != \"visibility\" && $attr != \"scaleX\" && $attr != \"scaleY\" && $attr != \"scaleZ\") {\n                \n                string $path = ($item+\".\"+$attr) ;\n                if(!`getAttr -l $path`) setAttr ($item+\".\"+$attr) 0 ;\n         \n            }\n        \n        }\n        \n    }\n    \n}\n\n\n// **********************************************************\n// Zero Out GUI\nglobal proc jgZeroOutAttrs () {\n\n    // Delete and Prefs\n    if (`window -exists jgZeroOutWin`) {\n        deleteUI jgZeroOutWin;\n        windowPref -removeAll jgZeroOutWin ;\n    }\n        \n    //Define basic window specs\n    window\n        -w 100\n        -rtf true\n        -t \"\"\n        jgZeroOutWin ;\n\n    columnLayout\n        -adjustableColumn true\n        -rowSpacing 6\n        -columnOffset both 6;\n        \n    button\n        -h 30\n        -bgc .75 .905 1 \n        -l \"Zero Out\"\n        -c \"jgZeroOutAttrsDo ;\" ;\n        \n    showWindow jgZeroOutWin ;\n        \n} jgZeroOutAttrs ;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Display and edit connections in shading networks" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Hypershade" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Hshd" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "HypershadeWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Edit various component values for the selected object(s)" 
+        -enableBackground 1
+        -backgroundColor 1 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Component Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CpEd" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ComponentEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Edit animation curves" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Graph Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "GE" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "GraphEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Make connections between object attributes" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Connection Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CE" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ConnectionEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Display relationships among nodes in your scene graphically" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Node Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "NE" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "NodeEditorWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Namespace Editor" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Namespace Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "NE" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "NamespaceEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Adjust Blend Shape weights" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Blend Shape" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Blnd" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "BlendShapeEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Edit expressions between attributes" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Expression Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "EE" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ExpressionEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Customize the joint scale" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Joint Size..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "JS" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconDisplay.png" 
+        -image1 "menuIconDisplay.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "jdsWin" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Customize the IK handle scale" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "IK Handle Size..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "IHS" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconDisplay.png" 
+        -image1 "menuIconDisplay.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ikHdsWin" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Set driven key options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Set..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Set." 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "menuIconKeys.png" 
+        -image1 "menuIconKeys.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "SetDrivenKeyOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "This script creates controls and save a lot of time for you" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "rr_main_curves.window_creation()" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Control" 
+        -overlayLabelColor 0 1 0 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import rr_main_curves\nrr_main_curves.window_creation()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select one or more objects, with the base shape selected last" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Blend Shape" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Blendshape" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "blendShape.png" 
+        -image1 "blendShape.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CreateBlendShape" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select all target objects to add then select the base object" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "addBlend" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "blendShapePlus.png" 
+        -image1 "blendShapePlus.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "AddBlendShape" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select the target objects to remove" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Remove" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "removeBlendShape.png" 
+        -image1 "removeBlendShape.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "RemoveBlendShape" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "This will paint weights" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "//--------------------------------------------------------------..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Pmax" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "//----------------------------------------------------------------------------------------------------------------------------------------------------//\n/*\n\tSCRIPT\t\t:    \tMAXSkinWeightTool v 1.1 for Maya\n\tAUTHOR\t\t:    \tPreeth.P.G., 3D Animator, \n\t\t\t\t\tpg.preeth@gmail.com |\n\t\t\t\t\twww.pgpreeth.com\n\n\tDATE\t\t\t:\t27/10/2009 18:00\n\n\tDESCRIPTION\t\t:    \tSkinWeightTool is skinning tool/UI.  It has similar functions as in 3DsMAX. where skinning is made easy for Riggers.\n                    \t\tYou just have to assign preset weights instead of painting.\n\tKnown Issues\t:\tif any please mail me. Since this is my first script there might be some BUG. May be. So please feel free to mail me.\n               \n\tUpdates\t\t: \tAdded Paste mirror option, mirror positive X Axis to Negative X axis and mirror negative X Axis to positive X axis . \n\n\tHistory \t\t:\tv1.1    Added Mirror Option for Maya\n\t\t\t\t\tv1.2\t  Fixed a bug in the paste mirror procedure.\n\t\t\t\t\tv1.3\t  Added a new feature to transfer a skin from one mesh to another with different topology and vertex count. (05/17/2010)\n\n*/    \n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc MAXSkinWeightTool() // Procedure that will be run from the installed shelf icon.\n{\n\tsource \"MAXSkinWeightTool.mel\";\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc SkinWeightTool_Win() // Procedure for creating a Window UI\n{\n\tstring $windowName = \"Maya_Weight_Tool\";\n\tif(`window -ex $windowName`) deleteUI $windowName;\n\twindow -t $windowName -rtf 1 -s 0 -mxb 0 -wh 180 250 -ip $windowName;\n\t\tcolumnLayout -adjustableColumn 1 ;\n            separator -h 2 -w 200 -style \"out\";\n            frameLayout -lv 0 -l \"Weight Tool\" -la \"center\" -mh 2 -mw 2 -w 180 -bs \"etchedOut\" -bgc 0.5 0.5 0.5 ;\n            columnLayout;\n            frameLayout -l \"Selection\" -la \"center\" -w 198 -h 45 -mh 3 -mw 5 -bs \"etchedOut\" ;\n                rowLayout -nc 4 -cw4 50 50 45 20;\n                    button - label \"  Grow  \" -bgc 0.7 0.7 0.7 -c GrowPolygonSelectionRegion Grow_but;\n                    button - label \" Shrink \" -bgc 0.7 0.7 0.7 -c ShrinkPolygonSelectionRegion Shrink_But;\n                    button - label \" Loop \" -bgc 0.7 0.7 0.7 -c loopSel loop_but;\n                    button - label \" Ring \" -bgc 0.7 0.7 0.7 -command RingSel ring_but;\n                setParent ..;\n            setParent ..;\n\n            frameLayout -l \"Preset Weight Values\" -la \"center\" -w 198 -h 45 -mh 3 -mw 5 -bs \"etchedOut\";\n                rowLayout -nc 6 -cw6 27 30 33 31 35 30 ;\n                    button - label \"  0 \" -bgc 0.5 1.0 0.5 -c VertWeight0_proc but0;\n                    button - label \" 0.1\" -bgc 0.5 1.0 0.5 -c VertWeight01_proc but01 ;\n                    button - label \"0.25\" -bgc 0.5 1.0 0.5 -c VertWeight025_proc but25;\n                    button - label \" 0.5\" -bgc 0.5 1.0 0.5 -c VertWeight050_proc but5;\n                    button - label \"0.75\" -bgc 0.5 1.0 0.5 -c VertWeight075_proc but075;\n                    button - label \"1.0 \" -bgc 0.5 1.0 0.5 -c VertWeight1_proc but1;\n                setParent ..;\n            setParent ..;\n\n            frameLayout -l \"Custom Weight Values\" -la \"center\" -w 198 -h 80 -mh 5 -mw 5 -bs \"etchedOut\";\n                    rowColumnLayout -numberOfRows 2 -rs 2 2 -co 1 \"both\" 2 -co 2 \"both\" 2;\n                    button - label \"Set Weight\" -bgc 1.0 1.0 0.6 -c SetWeight SetWeight_but;\n                    button - label \"Scale Weight\" -bgc 1.0 1.0 0.6 -c ScaleWeight ScaleWeight_but;\n                    floatField -minValue 0 -maxValue 1.0 -precision 2 -value 0.1 -step 0.1 -w 35 SetWeight_Val;\n                    floatField -minValue 0.001 -maxValue 5.0 -precision 3 -value 0.95 -step 0.05 -w 35 ScaleWeight_Val;\n\n                    button - label \"+\" -bgc 1.0 0.8 0.2 -w 30 -command AddWeight AddWeight_but;\n                    button - label \"+\" -bgc 1.0 0.8 0.2 -w 30 -c AddWeight5 AddWeight5_but;\n\n                    button - label \"-\" -bgc 1.0 1.0 0.6 -w 30 -command SubWeight SubWeight_but;\n                    button - label \"-\" -bgc 1.0 1.0 0.6 -w 30 -command SubWeight5 SubWeight5_but;\n                setParent ..;\n            setParent ..;\n\n            frameLayout -l \"Value Transfer\" -la \"center\" -w 198 -h 50 -mh 5 -mw 5 -bs \"etchedOut\";\n                rowLayout -nc 3 -cw3 60 64 61;\n                    button - label \"    Copy    \" -bgc 0.9 1.0 1.0 -c CopyVert CopyVert_but;\n                    button - label \"    Paste    \" -bgc 0.9 1.0 1.0 -c PasteVert PasteVert_but;\n                    button - label \"    Blend    \" -bgc 0.9 1.0 1.0 -c BlendVert BlendVert_but;\n                setParent ..;\n            setParent ..;\n\n            frameLayout -lv 0 -w 198 -mh 3 -mw 5 -bs \"etchedOut\";\n                columnLayout ;\n                    text -l \"No vertex copied in buffer\" VertName;\n                setParent ..;\n            setParent ..;\n           \n            frameLayout -l \"Skin Joints\" -la \"center\" -w 198 -h 120 -mh 3 -mw 5 -bs \"etchedOut\";\n                columnLayout -adjustableColumn 1 ;\n                    textScrollList -numberOfRows 7 -allowMultiSelection 0 -w 183 -bgc 0 0 0 -sc SelInfJoint_proc listBox ;\n                setParent ..;\n            setParent ..;\n\n            frameLayout -l \"Vertex Joint Info\" -la \"center\" -w 198 -h 100 -mh 3 -mw 5 -bs \"etchedOut\";\n                paneLayout -configuration \"vertical2\" -ps 2 40 20;   \n                    textScrollList -numberOfRows 7 -allowMultiSelection 0 -sc VertjointInfo_proc listBox1;\n                    textScrollList -numberOfRows 7 -allowMultiSelection 0 -enable 0 listBox2;\n                setParent ..;\n            setParent ..;\n\n            frameLayout -l \"Other Tools\" -la \"center\" -w 198 -h 50 -mh 3 -mw 5 -bs \"etchedOut\";\n                rowLayout -nc 2 -cw2 130 120 ;\n                    button -l \"Remove Zero Weight\" -bgc 0.5 0.5 1.0 -c RemoveZeroWeight RemoveZeroWeight_but;\n                    floatField -minValue 0.0001 -maxValue 1.0 -precision 3 -value 0.01 -step 0.1 -w 40 ZeroWeight_Val;\n                setParent ..;\n            setParent ..;\n\n            frameLayout -l \"Mirror Skin\" -la \"center\" -w 198 -h 50 -mh 3 -mw 5 -bs \"etchedOut\";\n                rowLayout -nc 3 -cw3 72 58 61;\n\t\t\tbutton -l \"Paste Mirror\" -bgc 1.0 0.4 0.1 -c mirrorPaste pasteMir_but;\n\t\t\tbutton -l \"+X  >  -X\" -bgc 1.0 1.0 0.6 -c posX2negX R2L_But;\n\t\t\tbutton -l \"-X  > +X\" -bgc 1.0 1.0 0.6 -c negX2posX L2R_But;\n\n                setParent ..;\n            setParent ..;\n            frameLayout -l \"Transfer Skin\" -la \"center\" -w 198 -h 60 -mh 3 -mw 5 -bs \"etchedOut\";\n                columnLayout ;\n                    text -l \"Select the source and the target mesh\" TransName;\n\t\t\tbutton -l \"Transfer\" -bgc 1.0 0.4 0.1 -c TransferSkin Transfer_but;\n                setParent ..;\n            setParent ..;\n             rowLayout -nc 2 -cw2 30 120 ;\n\t\t\tbutton -l \"  ?  \" -bgc 1.0 0 0 -c Help_proc;\n\t\t\ttext -w 175 -l \"     www.pgpreeth.com  \" -al \"right\" -bgc 0.9 1.0 1.0;\n\tshowWindow $windowName;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc SetWeight() // Procedure for setting an absolute weight based on the field value. Default=0.1. \n{\n\tfloat $SetWeightVal = `floatField -q -value SetWeight_Val`;\n\tButAddWeight($SetWeightVal);\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc ScaleWeight() // Procedure for multiplying each selected vertex's weight value by the field value, resulting in a relative weight change. Default=0.95.\n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tfloat $ScaleWeightVal = `floatField -q -value ScaleWeight_Val`;\n\tstring $SelInfJoint1[] = `textScrollList -q -selectItem listBox1`;\n\tstring $SelInfJointMain[] = `textScrollList -q -selectItem listBox`;\n\tint $NoofInfList = `textScrollList -q -ni listBox1`;\n\tif ($NoofInfList == 1)\n\t{\n\t\tprint \"NOTE: 100% influence to a bone. Please add more joints to the vertex to scale the values\\n\";\n\t}\n\telse\n\t{\n\t\tif (size($SelInfJoint1) == 0)\n\t\t{\n\t\t\tprint \"NOTE: Cannot be Scaled. Please Select the joint from the Vertex Joint Info.\\n\";\n\t\t}\n\t\telse\n\t\t{\n\t\t\tif (size($SelInfJoint1) == 0)\n\t\t\t{\n\t\t\t\tstring $SelVerts[];\n\t\t\t\t$SelVerts = `ls -sl -fl`;\n\t\t\t\tfloat $WeightVal_flt;\n\t\t\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t\t\t{\n\t\t\t\t\tfloat $CurrentWeightVal = `skinPercent -transform $SelInfJointMain[0] -query $SkCluster $SelVerts[$i]`;\n\t\t\t\t\tfloat $AddweightVal = $CurrentWeightVal * $ScaleWeightVal;\n\t\t\t\t\tskinPercent -transformValue $SelInfJointMain[0] $AddweightVal $SkCluster $SelVerts[$i];\n\t\t\t\t}\n\t\t\t\tif ( catch( `VertJntList`) )\n\t\t\t\t{\n\t\t\t\t\tprint \"NOTE: No Deformers Selected\\n\";\n\t\t\t\t}\n\t\t\t\ttextScrollList -e -selectItem $SelInfJointMain[0] listBox1;\n\t\t\t\ttextScrollList -e -deselectAll listBox;\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tstring $SelVerts[];\n\t\t\t\t$SelVerts = `ls -sl -fl`;\n\t\t\t\tfloat $WeightVal_flt;\n\t\t\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t\t\t{\n\t\t\t\t\tfloat $CurrentWeightVal = `skinPercent -transform $SelInfJoint1[0] -query $SkCluster $SelVerts[$i]`;\n\t\t\t\t\tfloat $AddweightVal = $CurrentWeightVal * $ScaleWeightVal;\n\t\t\t\t\tskinPercent -transformValue $SelInfJoint1[0] $AddweightVal $SkCluster $SelVerts[$i];\n\t\t\t\t}\n\t\t\t\tif ( catch( `VertJntList`) )\n\t\t\t\t{\n\t\t\t\t\tprint \"NOTE: No Deformers Selected\\n\";\n\t\t\t\t}\n\t\t\t\ttextScrollList -e -selectItem $SelInfJoint1[0] listBox1;\n\t\t\t}\n\t\t}\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\nglobal proc AddWeight() // Procedure for increasing each selected vertex's weight by 0.05. \n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tstring $SelInfJoint1[] = `textScrollList -q -selectItem listBox1`;\n   \tstring $SelInfJointMain[] = `textScrollList -q -selectItem listBox`;\n\tif (size($SelInfJoint1) == 0)\n\t{\n   \t\tstring $SelVerts[];\n\t\t$SelVerts = `ls -sl -fl`;\n\t\tfloat $WeightVal_flt;\n\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t{\n\t\t\tfloat $CurrentWeightVal = `skinPercent -transform $SelInfJointMain[0] -query $SkCluster $SelVerts[$i]`;\n\t\t\tfloat $AddweightVal = $CurrentWeightVal + 0.05;\n\t\t\tskinPercent -transformValue $SelInfJointMain[0] $AddweightVal $SkCluster $SelVerts[$i];\n\t\t}\n\t\tif ( catch( `VertJntList`) )\n\t\t{\n      \t\t\tprint \"NOTE: No Deformers Selected\\n\";\n\t\t}\n\t\ttextScrollList -e -selectItem $SelInfJointMain[0] listBox1;\n\t\ttextScrollList -e -deselectAll listBox;\n\t}\n\telse\n\t{\n\t\tstring $SelVerts[];\n\t\t$SelVerts = `ls -sl -fl`;\n\t\tfloat $WeightVal_flt;\n\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t{\n\t\t\tfloat $CurrentWeightVal = `skinPercent -transform $SelInfJoint1[0] -query $SkCluster $SelVerts[$i]`;\n\t\t\tfloat $AddweightVal = $CurrentWeightVal + 0.05;\n\t\t\tskinPercent -transformValue $SelInfJoint1[0] $AddweightVal $SkCluster $SelVerts[$i];\n\t\t}\n\t\tif ( catch( `VertJntList`) )\n\t\t{\n      \t\t\tprint \"NOTE: No Deformers Selected\\n\";\n\t\t}\n\t\ttextScrollList -e -selectItem $SelInfJoint1[0] listBox1;\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc AddWeight5() // Procedure for increasing each selected vertex's weight by five percent. \n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tstring $SelInfJoint1[] = `textScrollList -q -selectItem listBox1`;\n\tstring $SelInfJointMain[] = `textScrollList -q -selectItem listBox`;\n\tif (size($SelInfJoint1) == 0)\n\t{\n\t\tprint \"NOTE: Cannot be added\\n\";\n\t}\n\telse\n\t{\n\t\tstring $SelVerts[];\n\t\t$SelVerts = `ls -sl -fl`;\n\t\tfloat $WeightVal_flt;\n\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t{\n\t\t\tfloat $CurrentWeightVal = `skinPercent -transform $SelInfJoint1[0] -query $SkCluster $SelVerts[$i]`;\n\t\t\tfloat $AddweightVal = (($CurrentWeightVal * 5)/100) + $CurrentWeightVal;\n\t\t\tskinPercent -transformValue $SelInfJoint1[0] $AddweightVal $SkCluster $SelVerts[$i];\n\t\t\tif ( catch( `VertJntList`) )\n\t\t\t{\n\t\t\t\tprint \"NOTE: No Deformers Selected\\n\";\n\t\t\t}\n\t\t\ttextScrollList -e -selectItem $SelInfJoint1[0] listBox1;\n\t\t}\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc SubWeight() // Procedure for decreasing each selected vertex's weight by 0.05. \n\t{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tstring $SelInfJoint1[] = `textScrollList -q -selectItem listBox1`;\n\tint $NoofInfList = `textScrollList -q -ni listBox1`;\n\tif ($NoofInfList == 1)\n\t{\n\t\tprint \"NOTE: Please add a influence to the vertex. Select from the Skin joint list.\\n\";\n\t}\n\telse\n\t{\n\t\tif (size($SelInfJoint1) == 0)\n\t\t{\n\t\t\tprint \"NOTE: Cannot be subtracted. Please Select the joint from the Vertex Joint Info.\\n\";\n\t\t}\n\t\telse\n\t\t{\n\t\t\tint $List1NoofItems = `textScrollList -q -ni listBox1`;\n\t\t\t$SelInfJointInfo[0] = $SelInfJoint1[0];\n\t\t\tstring $SelVerts[];\n\t\t\t$SelVerts = `ls -sl -fl`;\n\t\t\tfloat $WeightVal_flt;\n\t\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t\t{\n\t\t\t\tfloat $CurrentWeightVal = `skinPercent -transform $SelInfJoint1[0] -query $SkCluster $SelVerts[$i]`;\n\t\t\t\tfloat $SubweightVal = $CurrentWeightVal - 0.05;\n\t\t\t\tskinPercent -transformValue $SelInfJoint1[0] $SubweightVal $SkCluster $SelVerts[$i];\n\t\t\t}\t\n\t\t\tVertJntList;\n\t\t\tint $List1NoofItemsAfter = `textScrollList -q -ni listBox1`;\n\t\t\tif ($List1NoofItemsAfter == $List1NoofItems)\n\t\t\t{\n\t\t\t\ttextScrollList -e -selectItem $SelInfJoint1[0] listBox1;\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\ttextScrollList -e -sii 1 listBox1;\n\t\t\t}\n\t\t}\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc SubWeight5() // Procedure for decreasing each selected vertex's weight by five percent. \n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tstring $SelInfJoint1[] = `textScrollList -q -selectItem listBox1`;\n\tint $NoofInfList = `textScrollList -q -ni listBox1`;\n\tif ($NoofInfList == 1)\n\t{\n\t\tprint \"NOTE: Please add a influence to the vertex. Select from the Skin joint list.\\n\";\n\t}\n\telse\n\t{\n\t\tif (size($SelInfJoint1) == 0)\n\t\t{\n\t\t\tprint \"NOTE: Cannot be subtracted. Please Select the joint from the Vertex Joint Info.\\n\";\n\t\t}\n\t\telse\n\t\t{\n\t\t\tint $List1NoofItems = `textScrollList -q -ni listBox1`;\n\t\t\t$SelInfJointInfo[0] = $SelInfJoint1[0];\n\t\t\tstring $SelVerts[];\n\t\t\t$SelVerts = `ls -sl -fl`;\n\t\t\tfloat $WeightVal_flt;\n\t\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t\t{\n\t\t\t\tfloat $CurrentWeightVal = `skinPercent -transform $SelInfJoint1[0] -query $SkCluster $SelVerts[$i]`;\n\t\t\t\tfloat $SubweightVal = $CurrentWeightVal - (($CurrentWeightVal * 5)/100);\n\t\t\t\tskinPercent -transformValue $SelInfJoint1[0] $SubweightVal $SkCluster $SelVerts[$i];\n\t\t\t}\n\t\t\tVertJntList;\n\t\t\tint $List1NoofItemsAfter = `textScrollList -q -ni listBox1`;\n\t\t\tif ($List1NoofItemsAfter == $List1NoofItems)\n\t\t\t{\n\t\t\t\ttextScrollList -e -selectItem $SelInfJoint1[0] listBox1;\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\ttextScrollList -e -sii 1 listBox1;\n\t\t\t}\n\t\t}\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc ButAddWeight(float $AddVal) // Procedure for assigning an absolute weight value of 0.1, 0.25, 0.5, 0.75 and 1 for the active bone to the selected vertices. \n// Note: When you click one of these buttons, the active bone is added to the list of bones influencing each of the selected vertices, if necessary. \n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tstring $SelInfJoint1[] = `textScrollList -q -selectItem listBox1`;\n\tint $NoofInfList = `textScrollList -q -ni listBox1`;\n\tstring $SelInfJointMain[] = `textScrollList -q -selectItem listBox`;\n\tif (size($SelInfJoint1) != 0)\n\t{\n\t\tif ($NoofInfList == 1)\n\t\t{\n\t\t\tprint \"NOTE: Cannot add weight to a single vertes influence joint. Please add more influence to the vertex..\\n\";\n\t\t}\n\t\telse\n\t\t{\n\t\t\tif (size($SelInfJoint1) == 0)\n\t\t\t{\n\t\t\t\tstring $SelVerts[];\n\t\t\t\t$SelVerts = `ls -sl -fl`;\n\t\t\t\tfloat $WeightVal_flt;\n\t\t\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t\t\t{\n\t\t\t\t\tskinPercent -transformValue $SelInfJointMain[0] $AddVal $SkCluster $SelVerts[$i];\n\t\t\t\t}\n\t\t\t\tif ( catch( `VertJntList`) )\n\t\t\t\t{\n\t\t\t\t\tprint \"NOTE: No Deformers Selected \\n\";\n\t\t\t\t}\n\t\t\t\ttextScrollList -e -selectItem $SelInfJointMain[0] listBox1;\n\t\t\t\ttextScrollList -e -deselectAll listBox;\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tstring $SelVerts[];\n\t\t\t\t$SelVerts = `ls -sl -fl`;\n\t\t\t\tfloat $WeightVal_flt;\n\t\t\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t\t\t{\n\t\t\t\t\tskinPercent -transformValue $SelInfJoint1[0] $AddVal $SkCluster $SelVerts[$i];\n\t\t\t\t}\n\t\t\t\tif ( catch( `VertJntList`) )\n\t\t\t\t{\n\t\t\t\t\tprint \"No Deformers Selected \\n\";\n\t\t\t\t}\n\t\t\t\ttextScrollList -e -selectItem $SelInfJoint1[0] listBox1;\n\t\t\t}\n\t\t}\n\t}\n\telse\n\t{\n\t\tif (size($SelInfJoint1) == 0)\n\t\t{\n\t\t\tstring $SelVerts[];\n\t\t\t$SelVerts = `ls -sl -fl`;\n\t\t\tfloat $WeightVal_flt;\n\t\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t\t{\n\t\t\t\tskinPercent -transformValue $SelInfJointMain[0] $AddVal $SkCluster $SelVerts[$i];\n\t\t\t}\n\t\t\tif ( catch( `VertJntList`) )\n\t\t\t{\n\t\t\t\tprint \"NOTE: No Deformers Selected\\n\";\n\t\t\t}\n\t\t\ttextScrollList -e -selectItem $SelInfJointMain[0] listBox1;\n\t\t\ttextScrollList -e -deselectAll listBox;\n\t\t}\n\t\telse\n\t\t{\n    \t\t\tstring $SelVerts[];\n    \t\t\t$SelVerts = `ls -sl -fl`;\n    \t\t\tfloat $WeightVal_flt;\n    \t\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n    \t\t\t{\n    \t\t\t\tskinPercent -transformValue $SelInfJoint1[0] $AddVal $SkCluster $SelVerts[$i];\n    \t\t\t}\n\t\t\tif ( catch( `VertJntList`) )\n\t\t\t{\n\t\t\t\tprint \"No Deformers Selected \\n\";\n\t\t\t}\n\t\t\ttextScrollList -e -selectItem $SelInfJoint1[0] listBox1;\n\t\t}\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc RemoveZeroWeight() // Procedure for removing weights less than the custom value specified in the field.\n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $buffer[];\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $buffer`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tfloat $Weight_val = `floatField -q -value ZeroWeight_Val`;\n\tskinPercent -pruneWeights $Weight_val $SkCluster $buffer[0];\n\tif ( catch( `VertJntList`) )\n\t{\n\t\tprint \"NOTE: No Deformers Selected\\n\";\n\t}    \n\ttextScrollList -e -sii 1 listBox1;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc loopSel() // Procedure for expands the current vertex selection to include all vertices in continuing edges. \n// Note: You must select at least two vertices to use the Loop selection. \n{\n\tConvertSelectionToContainedEdges;\n\tpolySelectEdges edgeLoopOrBorder;\n\tPolySelectConvert 3;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc RingSel() // Procedure for expands the current vertex selection to include all vertices in parallel edges. \n// Note: You must select at least two vertices to use the Ring selection. \n{\n\tConvertSelectionToContainedEdges;\n\tpolySelectEdges edgeRing;\n\tPolySelectConvert 3;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\nSkinWeightTool_Win; // Executing the main WINDOW\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc SelInfJoint_proc() // Procedure to be executed when the user clicks on the Skin Joints list.\n{\n\tstring $SelInfJoint[] = `textScrollList -q -selectItem listBox`;\n\tsetSmoothSkinInfluence $SelInfJoint[0];\n\ttextScrollList -e -deselectAll listBox1;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc JntList() // Procedure for information about the Joint influence to be listed in the Skin Joint list.\n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tif (size($SelVert1) != 0)\n\t{\n\t\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\t\ttextScrollList -e -ra listBox1;\n\t\ttextScrollList -e -ra listBox;\n\t\tstring $syntax;\n\t\tstring $SelObj[] = `ls -sl -fl`;\n\t\tstring $JntList[] = `skinCluster -q -inf`;\n\t\tfor ($i = 0 ; $i < size($JntList) ; $i++)\n\t\t{\n\t\t\tif( $i == 0)\n\t\t\t{\n\t\t\t\t$syntax = \"textScrollList -e -append \" + $JntList[$i];\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\t$syntax = $syntax + \" -append \" + $JntList[$i];\n\t\t\t}\n\t\t}\n\t\tstring $synatx1 = $syntax + \" listBox\";\n\t\teval ($synatx1);\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\nJntList;\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc VertJntList() // Procedure for information about the Vertex joint influence to be listed in the Vertex Skin Joint list.\n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tif (size($SelVert1) != 0)\n\t{\n\t\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\t\tif ($SkCluster == \"\")\n\t\t{\n\t\t\tprint \"Please select a skinned object\\n\";\n\t\t\ttextScrollList -e -append \"Select valid skin object\" listBox;\n\t\t\ttextScrollList -e -ra listBox2;\n\t\t}\n\t\telse\n\t\t{\n\t\t\ttextScrollList -e -ra listBox1;\n\t\t\ttextScrollList -e -ra listBox2;\n\t\t\tstring $syntax;\n\t\t\tstring $syntaxNo;\n\t\t\tstring $SelVert1[] = `ls -sl -fl`;\n\t\t\tif (size($SelVert1) == 0)\n\t\t\t{\n\t\t\t\tprint \"NOTE: Please Select the skin Object\\n\";\n\t\t\t\ttextScrollList -e -append \"No Verts selected\" listBox1;\n\t\t\t\ttextScrollList -e -append \"No deformers\" listBox;\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tstring $SelVertText = \"No of Vertices selected : \" + size($SelVert1);\n\t\t\t\tstring $JntInfList[] = `skinPercent -ignoreBelow 0.0001 -query -transform $SkCluster $SelVert1[0]`;\n\t\t\t\tfloat $JntInfNoList[] = `skinPercent -ignoreBelow 0.0001 -query -value $SkCluster $SelVert1[0]`;\n\t\t\t\tfor ($i = 0 ; $i < size($JntInfList) ; $i++)\n\t\t\t\t{\n\t\t\t\t\tif( $i == 0)\n\t\t\t\t\t{   \n\t\t\t\t\t\tstring $JntInfNoListStr1 = $JntInfList[$i];\n\t\t\t\t\t\t$syntax = \"textScrollList -e -append \" + $JntInfNoListStr1;\n\t\t\t\t\t\t$syntaxNo = \"textScrollList -e -append \" + $JntInfNoList[$i];\n\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t{\n\t\t\t\t\t\tstring $JntInfNoListStr1 = $JntInfList[$i];\n\t\t\t\t\t\t$syntax = $syntax + \" -append \" + $JntInfNoListStr1;\n\t\t\t\t\t\t$syntaxNo = $syntaxNo + \" -append \" + $JntInfNoList[$i];\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tstring $synatx1 = $syntax + \" listBox1\";\n\t\t\t\tstring $synatx2 = $syntaxNo + \" listBox2\";\n\t\t\t\teval ($synatx1);\n\t\t\t\teval ($synatx2);\n\t\t\t}\n\t\t}\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nif ( catch( `VertJntList`) )\n{\n\tprint \"NOTE: No Deformers Selected \\n\";\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc VertjointInfo_proc() // Procedure to be executed when the user clicks on the Vertex skin Joint list.\n{\n\tstring $SelInfJoint1[] = `textScrollList -q -selectItem listBox1`;\n\ttextScrollList -e -deselectAll listBox;\n\tsetSmoothSkinInfluence $SelInfJoint1[0];\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc VertWeight0_proc() // Procedure for assigning an absolute weight value of 0 for the active bone to the selected vertices. \n// Note: When you click this button, the active bone is added to the list of bones influencing each of the selected vertices, if necessary. \n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tstring $SelInfJoint1[] = `textScrollList -q -selectItem listBox1`;\n\tint $NoofInfList = `textScrollList -q -ni listBox1`;\n\tstring $SelInfJointMain[] = `textScrollList -q -selectItem listBox`;\n\tif ($NoofInfList == 1)\n\t{\n\t\tprint \"NOTE: Cannot Add Zero Weight to a single vertes influence joint. Please add more influence to the vertex..\\n\";\n\t}\n\telse\n\t{\n\t\tif (size($SelInfJoint1) == 0)\n\t\t{\n\t\t\tprint \"NOTE: Cannot Add Zero Weight. Please Select the joint from the Vertex Joint Info.\\n\";\n\t\t}\n\t\telse\n\t\t{\n\t\t\tstring $SelVerts[];\n\t\t\t$SelVerts = `ls -sl -fl`;\n\t\t\tfloat $WeightVal_flt;\n\t\t\tfor ($i = 0; $i<size($SelVerts); $i++)\n\t\t\t{\n\t\t\t\tskinPercent -transformValue $SelInfJoint1[0] 0 $SkCluster $SelVerts[$i];\n\t\t\t}\n\t\t\tif ( catch( `VertJntList`) )\n\t\t\t{\n\t\t\t\tprint \"NOTE: No Deformers Selected \\n\";\n\t\t\t}\n\t\t\ttextScrollList -e -sii 1 listBox1;\n\t\t}\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc VertWeight01_proc() // Procedure to execute the ButAddWeight() procedure with the custom int value.\n{\n\tButAddWeight(0.1);\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc VertWeight025_proc() // Procedure to execute the ButAddWeight() procedure with the custom int value.\n{\n\tButAddWeight(0.25);\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc VertWeight050_proc() // Procedure to execute the ButAddWeight() procedure with the custom int value.\n{\n\tButAddWeight(0.5);\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc VertWeight075_proc() // Procedure to execute the ButAddWeight() procedure with the custom int value.\n{\n\tButAddWeight(0.75);\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc VertWeight1_proc() // Procedure to execute the ButAddWeight() procedure with the custom int value.\n{\n\tButAddWeight(1.0);\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc CopyVert() // Procedure to store the current weight value(s) in the copy buffer. \n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $JntInfList[] = `skinPercent -query -transform $SkCluster $SelVert1[0]`;\n\tfloat $JntInfNoList[] = `skinPercent -query -value $SkCluster $SelVert1[0]`;   \n\tstring $TextDispInfo = $SelVert1[0] + \" copied in buffer\";\n\ttext -e -l $TextDispInfo VertName;\n\ttextScrollList -e -sii 1 listBox1;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc PasteVert() // Procedure to retrieve the weight values from the copy buffer and assigns them to the selected vertices.\n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tstring $TextDispInfo = `text -q -l VertName`;\n\tif ($TextDispInfo == \"No vertex copied in buffer\")\n\t{\n\t\tprint \"Please copy first to paste\\n\";\n\t}\n\telse\n\t{\n\t\tstring $buffer[];\n\t\tstring $TokenizeText = `tokenize $TextDispInfo \" \" $buffer`;\n\t\tstring $JntInfList[] = `skinPercent -query -transform $SkCluster $buffer[0]`;\n\t\tfloat $JntInfNoList[] = `skinPercent -query -value $SkCluster $buffer[0]`;\n\t\tstring $syntax;\n\t\tfor ($i = 0 ; $i < size($JntInfList) ; $i++)\n\t\t{\n\t\t\tif( $i == 0)\n        \t\t{\n            \t\t\t$syntax = \"skinPercent -transformValue \" + $JntInfList[$i] + \" \" + $JntInfNoList[$i] + \" \";\n        \t\t}\n        \t\telse\n        \t\t{\n\t\t\t$syntax = $syntax + \" -transformValue \" + $JntInfList[$i] + \" \" + $JntInfNoList[$i] + \" \";\n        \t\t}\n\t\t}\n\t\tfor ($j = 0 ; $j < size($SelVert1) ; $j++)\n\t\t{\n\t\t\tstring $synatx1 = $syntax + \" \" + $SkCluster+ \" \" + $SelVert1[$j];\n\t\t\teval ($synatx1);\n\t\t}\n\t\tif ( catch( `VertJntList`) )\n\t\t{\n\t\t\tprint \"NOTE: No Deformers Selected \\n\";\n\t\t}\n\t\ttextScrollList -e -sii 1 listBox1;\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc BlendVert() // Procedure to modify the selected weight values to smooth out the transition between them and their surrounding vertices. \n{\n\tstring $ClusterName[];\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert1[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tstring $SelVert1[] = `ls -sl -fl`;\n\tGrowPolygonSelectionRegion;\n\tselect -deselect $SelVert1;\n\tstring $GrowVert[] = `ls -sl -fl`;\n\tfor ($z = 0 ; $z < size($GrowVert) ; $z++)\n\t{\n\t\tstring $JntInfList[] = `skinPercent -query -transform $SkCluster $GrowVert[$z]`;\n\t\tfloat $JntInfNoList[] = `skinPercent -query -value $SkCluster $GrowVert[$z]`;\n\t\tstring $syntax;\n\t\tfor ($i = 0 ; $i < size($JntInfList) ; $i++)\n\t\t{\n\t\t\tif( $i == 0)\n       \t\t{\n        \t\t\t$syntax = \"skinPercent -transformValue \" + $JntInfList[$i] + \" \" + $JntInfNoList[$i] + \" \";\n        \t\t}\n        \t\telse\n        \t\t{\n\t\t\t\t$syntax = $syntax + \" -transformValue \" + $JntInfList[$i] + \" \" + $JntInfNoList[$i] + \" \";\n        \t\t}\n\t\t}\n\t\tstring $synatx1;\n\t\tfor ($j = 0 ; $j < size($SelVert1) ; $j++)\n\t\t{\n\t\t\t$synatx1 = $syntax + \" \" + $SkCluster+ \" \" + $SelVert1[$j];\n\t\t\teval ($synatx1);\n\t\t}\n\t}\n\tif ( catch( `VertJntList`) )\n\t{\n\t\tprint \"NOTE: No Deformers Selected \\n\";\n\t}\n\ttextScrollList -e -sii 1 listBox1;\n\tselect -r $SelVert1;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc mirrorPaste()\n{\n\tstring $SelVertforPaste[] = `ls -sl -fl`;\n\tstring $syntax;\n\tstring $synatx1;\n\tint $iVal;\n\tstring $statusMsg = \"No of vertices: 0/\" + size($SelVertforPaste);\n\tprogressWindow -title \"Paste mirror.....\" -progress 0 -status $statusMsg -isInterruptable true;\n\tstring $buffer[];\n\tstring $numTokens = `tokenize $SelVertforPaste[0] \".\" $buffer`;\n\tint $noOfVertsinMesh[] = `polyEvaluate -v`;\n\tfor ($i = 0; $i<size($SelVertforPaste); $i++)\n\t{\n\t\tfloat $SelVertPosition[] = `pointPosition $SelVertforPaste[$i]`;\n\t\tfloat $mirVertPosition[] = {-$SelVertPosition[0], $SelVertPosition[1], $SelVertPosition[2]};\n\t\tstring $SkCluster = `findRelatedSkinCluster($buffer[0])`;\n\t\tstring $jntInfList[] = `skinPercent -ignoreBelow 0.0001 -query -transform $SkCluster $SelVertforPaste[$i]`;\n\t\tfloat $jntInfNoList[] = `skinPercent -ignoreBelow 0.0001 -query -value $SkCluster $SelVertforPaste[$i]`;\n\t\tstring $TotjointList[] = `skinCluster -q -inf`;\n\t\tstring $FinalJntInfList[];\n\t\tint $incVal = 0;\n\t\tfor ($j = 0; $j<size($jntInfList); $j++)\n\t\t{\n\t\t\tstring $mainVert_boneTranslateX = $jntInfList[$j] + \".translateX\";\n\t\t\tfloat $mainVert_boneTranslateX_Val = `getAttr $mainVert_boneTranslateX`;\n\t\t\tfloat $mirrorBoneTranslateX_Val = -$mainVert_boneTranslateX_Val;\n\t\t\tfloat $mirrorBoneTranslateX_Val_1000 = $mirrorBoneTranslateX_Val * 1000;\n\t\t\tint $finalCheckMirrorVal = `floor $mirrorBoneTranslateX_Val_1000`;\n\t\t\tfor ($k = 0; $k<size($TotjointList); $k++)\n\t\t\t{\n\t\t\t\tstring $AllboneTranslateX = $TotjointList[$k] + \".translateX\";\n\t\t\t\tfloat $getAttrAllboneTranslateX_Val = `getAttr $AllboneTranslateX`;\n\t\t\t\tfloat $AllboneTranslateX_Val_1000 = $getAttrAllboneTranslateX_Val * 1000;\n\t\t\t\tint $finalCheckAllVal = `floor $AllboneTranslateX_Val_1000`;\n\t\t\t\tif ($finalCheckAllVal == $finalCheckMirrorVal)\n\t\t\t\t{\n\t\t\t\t\t$FinalJntInfList[$incVal] = $TotjointList[$k];\n\t\t\t\t\t$incVal = $incVal + 1;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor ($m = 0; $m<$noOfVertsinMesh[0]; $m++)\n\t\t{\n\t\t\tstring $FindVertPosition_str = $buffer[0] + \".vtx[\" + $m + \"]\";\n\t\t\tfloat $FindVertPosition[] = `pointPosition $FindVertPosition_str`;\n\t\t\tif ($FindVertPosition[0] == $mirVertPosition[0])\n\t\t\t{\n\t\t\t\tfor ($n = 0 ; $n < size($FinalJntInfList) ; $n++)\n\t\t\t\t{\n\t\t\t\t\tif( $n == 0)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t$syntax = \"skinPercent -transformValue \" + $FinalJntInfList[$n] + \" \" + $jntInfNoList[$n] + \" \";\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t$syntax = $syntax + \" -transformValue \" + $FinalJntInfList[$n] + \" \" + $jntInfNoList[$n] + \" \";\n\t\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\t$synatx1 = $syntax + \" \" + $SkCluster + \" \" + $FindVertPosition_str;\n\t\t\t\teval ($synatx1);\n\t\t\t}\n\t\t}\n         \tif ( `progressWindow -query -isCancelled` ) break;\n\t\tif ( `progressWindow -query -progress` >= 100 ) break;\n\t\t$iVal = (100 * $i)/size($SelVertforPaste);\n\t\tprogressWindow -edit -progress $iVal -status (\"No of vertices: \"+$i+\"/\"+size($SelVertforPaste));\n\t}\n\tprogressWindow -endProgress;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\nglobal proc posX2negX()\n{\n\tstring $ClusterName[];\n\tstring $SelVert[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tcopySkinWeights -ss $SkCluster -ds $SkCluster -mirrorMode YZ -surfaceAssociation closestPoint -influenceAssociation closestJoint;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\nglobal proc negX2posX()\n{\n\tstring $ClusterName[];\n\tstring $SelVert[] = `ls -sl -fl`;\n\tstring $numTokens = `tokenize $SelVert[0] \".\" $ClusterName`;\n\tstring $SkCluster = `findRelatedSkinCluster($ClusterName[0])`;\n\tcopySkinWeights -ss $SkCluster -ds $SkCluster -mirrorMode YZ -mirrorInverse -surfaceAssociation closestPoint -influenceAssociation closestJoint;\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc Help_proc() // Procedure for help regarding the tool.\n{\n\tstring $Helpwindow = `window -title \"HELP\" -widthHeight 40 10 -ip -bgc 1.0 1.0 1.0`;\n\tcolumnLayout;\n\t\ttextField -text \"Video demo coming soon at WWW.YOUTUBE.COM\" -editable 0 -w 275;\n\tsetParent ..;\n\tshowWindow $Helpwindow;\n}\n\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc ChangeSel() // Procedure to be executed when the user changes the selection in the viewport.\n{\n\tstring $SelObj[] = `ls -sl -fl`;\n\tif (size($SelObj) == 0)\n\t{\n\t\tEnaDis_proc(0);\n\t\ttextScrollList -e -ra listBox;\n\t\ttextScrollList -e -ra listBox1;      \t\t\n\t\ttextScrollList -e -ra listBox2; \n\t\ttextScrollList -e -sii 1 -append \"No Skin Mesh selected\" listBox;\n      \t\ttextScrollList -e -sii 1 -append \"No Verts selected\" listBox1;\n\t\ttextScrollList -e -sii 1 listBox1;\n\t}\n\telse\n\t{\n\t\tEnaDis_proc(1);\n\t\tif ( catch( `JntList`) )\n\t\t{\n\t\t\ttextScrollList -e -sii 1 -append \"No Verts selected\" listBox1;\n\t\t}\n\t\tif ( catch( `VertJntList`) )\n\t\t{\n\t\t\ttextScrollList -e -sii 1 -append \"No Verts selected\" listBox1;\n\t\t}\n\t\tint $noOfItems = `textScrollList -q -ni listBox1`;\n\t\tif ($noOfItems == 0) \n\t\t{\n\t\t\ttextScrollList -e -ra listBox;\n\t\t\ttextScrollList -e -sii 1 -append \"No Verts selected\" listBox1;\n\t\t\ttextScrollList -e -sii 1 -append \"No Skin Mesh selected\" listBox;\n\t\t}\n\t\telse\n\t\t{\n\t\t\ttextScrollList -e -sii 1 listBox1;\n\t\t}\n\t}\n\tstring $CheckIfVertsOrGeo[] = `textScrollList -q -selectItem listBox1`;\n\tif ($CheckIfVertsOrGeo[0] == \"No Verts selected\")\n\t{\n\t\tEnaDis_proc(0);\n\t\tprint \"Note: Select the Vertices to edit\\n\";\n\t}\n\telse\n\t{\n\t\tEnaDis_proc(1);\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\nglobal proc TransferSkin()\n{\n\tstring $SelectedMesh[] = `ls -sl -fl`;\n\tif (size($SelectedMesh) <=1)\n\t{\n\t\terror \"Please select the Source and then the target to transfer the skin\";\n\t}\n\telse\n\t{\n\t\tstring $SourceSkin = `findRelatedSkinCluster $SelectedMesh[0]`;\n\t\tif ($SourceSkin == \"\")\n\t\t{\n\t\t\terror \"Select a Source mesh with skin cluster\";\n\t\t}\n\t\telse\n\t\t{\n\t\t\tstring $DestinationSkin = `findRelatedSkinCluster $SelectedMesh[1]`;\n\t\t\tif ($DestinationSkin == \"\")\n\t\t\t{\n\t\t\t\tstring $Skinbones[] = `skinCluster -q -inf $SelectedMesh[0]` ;\n\t\t\t\tskinCluster $Skinbones $SelectedMesh[1];\n\t\t\t\tstring $SourceSkin = `findRelatedSkinCluster $SelectedMesh[0]`;\n\t\t\t\tstring $DestinationSkin = `findRelatedSkinCluster $SelectedMesh[1]`;\n\t\t\t\tcopySkinWeights -ss $SourceSkin -ds $DestinationSkin -noMirror -surfaceAssociation closestPoint -influenceAssociation closestJoint;\n\t\t\t\tselect -r $SelectedMesh;\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tdelete -ch $SelectedMesh[1];\n\t\t\t\tstring $Skinbones[] = `skinCluster -q -inf $SelectedMesh[0]` ;\n\t\t\t\tskinCluster $Skinbones $SelectedMesh[1];\n\t\t\t\tstring $SourceSkin = `findRelatedSkinCluster $SelectedMesh[0]`;\n\t\t\t\tstring $DestinationSkin = `findRelatedSkinCluster $SelectedMesh[1]`;\n\t\t\t\tcopySkinWeights -ss $SourceSkin -ds $DestinationSkin -noMirror -surfaceAssociation closestPoint -influenceAssociation closestJoint;\n\t\t\t\tselect -r $SelectedMesh;\n\t\t\t}\n\t\t}\n\t}\n}\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc EnaDis_proc(int $Val) // Procedure to Enable and disable the buttons and fields in the UI.\n{\n\tbutton -e -enable $Val Grow_but;\n\tbutton -e -enable $Val Shrink_But;\n\tbutton -e -enable $Val loop_but;\n\tbutton -e -enable $Val ring_but;\n\tbutton -e -enable $Val but0;\n\tbutton -e -enable $Val but01;\n\tbutton -e -enable $Val but25;\n\tbutton -e -enable $Val but5;\n\tbutton -e -enable $Val but075;\n\tbutton -e -enable $Val but1;\n\tbutton -e -enable $Val SetWeight_but;\n\tbutton -e -enable $Val ScaleWeight_but;\n\tfloatField -e -enable $Val SetWeight_Val;\n\tfloatField -e -enable $Val ScaleWeight_Val;\n\tbutton -e -enable $Val AddWeight_but;\n\tbutton -e -enable $Val AddWeight5_but;\n\tbutton -e -enable $Val SubWeight_but;\n\tbutton -e -enable $Val SubWeight5_but;\n\tbutton -e -enable $Val CopyVert_but;\n\tbutton -e -enable $Val PasteVert_but;\n\tbutton -e -enable $Val BlendVert_but;\n\ttextScrollList -e -enable $Val listBox ;\n\ttextScrollList -e -enable $Val listBox1;\n\tbutton -e -enable $Val RemoveZeroWeight_but;\n\tfloatField -e -enable $Val ZeroWeight_Val;\n\tbutton -e -enable $Val pasteMir_but;\n\tbutton -e -enable $Val R2L_But;\n\tbutton -e -enable $Val L2R_But;\n}\n\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\nint $jobNum = `scriptJob -runOnce true  -parent \"Maya_Weight_Tool\" -e SelectionChanged ChangeSel -protected`; // Automatic update of UI\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n\nglobal proc ScriptRun() // Procedure to automatically update the UI\n{\n\tglobal string $windowName;\n\tglobal int $jobNum;\n\tif(`scriptJob -ex $jobNum`)\n\t{\n\t\tscriptJob -kill $jobNum -force;\t\n\t}\n\t$jobNum = `scriptJob -parent \"Maya_Weight_Tool\" -e SelectionChanged ChangeSel -protected`;\n}\nScriptRun;\nChangeSel;\n//----------------------------------------------------------------------------------------------------------------------------------------------------//\n// END OF SCRIPT\n// @ pg.preeth@gmail.com" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "This is a tool for face controls" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "/*\nScript: FacialGUI.mel\nAuthor: Vijay Lakshmanan\nHistory: V 1.0..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "FACEctl" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "/*\nScript: FacialGUI.mel\nAuthor: Vijay Lakshmanan\nHistory: V 1.0 09/07/2011\n\nDescription: ReadyMade Controls tab gives options to create a generic UI for facial animation.\n             Create Your Own tab allows user to create their own controls. \n             \n             #Control Name: name of the control you wish to create.\n             #isRectangle?: Check this box if you want a rectangle for the control. Leave it unchecked for square.\n             #No of Box Ctrls: Select how many box type controls you want to create.\n             #No of Slider Ctrls: Select how many slider type controls you want.\n             #Box Ctrl position and Slider Ctrl position: determines the position of the movable control box.\n\n#ToDo: Implement a UI to easily connect blend nodes to the UI controls.             \n\n*/\n\n//Appends the selected items to the selected items list.\nproc AppendSelectedItems(){\n    string $selected[] = `textScrollList -q -selectItem availableControlsList`;\n    string $existingItems[] = `textScrollList -q -allItems selectedControlsList`;\n      \n    $selected = stringArrayRemove ($existingItems , $selected);\n\n    for( $each in $selected ){\n            textScrollList -e -append $each selectedControlsList;\n            textScrollList -e -deselectAll availableControlsList;\n    }\n}\n\n//Deletes them from the list.\nproc DeleteSelectedItems(){\n    string $selected[] = `textScrollList -q -selectItem selectedControlsList`;\n    for ( $each in $selected ) {\n    textScrollList -e -removeItem $each selectedControlsList;\n    }\n}\n\n//Creates the text needed for each controls.\nproc CreateTextCurves(string $font, string $text){\n           string $deleteGrp[] = `textCurves -ch 0 -f $font -t $text`;\n           string $select[];\n           $select = `listRelatives -ad -type \"nurbsCurve\" `;\n           select $select; \n           group -name ($text +\"_Text\");\n           parent -w;\n           setAttr (\"|\"+ $text + \"_Text.overrideEnabled\" ) 1;\n           setAttr (\"|\"+ $text + \"_Text.overrideDisplayType\" )2;\n           makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n           delete $deleteGrp;\n           \n           xform -cp;\n           move -rpr -xy 4 0 ;\n           makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n}\n\n// Locks the attribute for the control thats passed as argument to it.\nproc LockAttr(string $control , string $attribute){\n    setAttr -lock true -keyable false -channelBox false ($control + $attribute);\n}\n\n//Creates the movable control box\nproc string CreateControlBox(string $baseName , string $controlPosition , string $isRect){\n    string $curve;\n    $curve = `curve -d 1 -p -0.5 0.5 0 -p 0.5 0.5 0 -p 0.5 -0.5 0 -p -0.5 -0.5 0 -p -0.5 0.5 0 -k 0 -k 1 -k 2 -k 3 -k 4 `;\n    rename $curve ($baseName + \"_Ctrl\");\n    xform -cp;\n    \n    switch ( $controlPosition ) {\n        case \"Left\":\n        if($isRect == \"true\"){\n            move -r -4.5 0 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0; \n            transformLimits -tx 0 9 -ty -3 3 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n\n        }\n        else {\n            move -r -3 0 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -tx 0 6 -ty -3 3 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n            \n        }\n        break;\n        case \"Right\":\n        if($isRect == \"true\"){\n            move -r 4.5 0 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0; \n            transformLimits -tx -9 0 -ty -4.5 4.5 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n        }\n        else {\n            move -r 3 0 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -tx -6 0 -ty -3 3 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n        }\n        break;\n        case \"Center\":\n        if($isRect == \"true\") {\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -tx -4.5 4.5 -ty -3 3 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n        }\n        else {\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -tx -3 3 -ty -3 3 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n        }\n        break;\n        case \"Up\":\n        if($isRect == \"true\") {\n            move -r 0 3 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -tx -4.5 4.5 -ty -6 0 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n        }\n        else {\n            move -r 0 3 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -tx -3 3 -ty -6 0 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n        }\n        break;\n        case \"Down\":\n        if($isRect == \"true\") {\n            move -r 0 -3 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -tx -4.5 4.5 -ty 0 6 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n\n        }\n        else {\n            move -r 0 -3 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -tx -3 3 -ty 0 6 -etx 1 1 -ety 1 1 ($baseName + \"_Ctrl\");\n        }\n        break;\n        \n    }\n\n        LockAttr($baseName + \"_Ctrl\",\".tz\");\n        LockAttr($baseName + \"_Ctrl\",\".rx\");\n        LockAttr($baseName + \"_Ctrl\",\".ry\");\n        LockAttr($baseName + \"_Ctrl\",\".rz\");\n        LockAttr($baseName + \"_Ctrl\",\".sx\");\n        LockAttr($baseName + \"_Ctrl\",\".sy\");\n        LockAttr($baseName + \"_Ctrl\",\".sz\");\n        LockAttr($baseName + \"_Ctrl\",\".v\");\n        \n    return $curve;\n}\n\n//Creates the Slider Control group.\nproc CreateSlider( string $sliderGrpName, string $controlPosition) {\n    string $curve;\n    $curve = `curve -d 1 -p -0.5 3 0 -p 0.5 3 0 -p 0.5 -3 0 -p -0.5 -3 0 -p -0.5 3 0 -k 0 -k 1 -k 2 -k 3 -k 4 `;\n    toggle -state on -template;\n    rename $curve ( $sliderGrpName + \"_Base\" );\n    $curve = `curve -d 1 -p -0.6 0.6 0 -p 0.6 0.6 0 -p 0.6 -0.5 0 -p -0.6 -0.5 0 -p -0.6 0.6 0 -k 0 -k 1 -k 2 -k 3 -k 4` ;\n    rename $curve ($sliderGrpName + \"_Ctrl\" );\n    \n    switch ($controlPosition) {\n        case \"Up\":\n            move -r 0 3 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -ty -6 0 -ety 1 1 ($sliderGrpName + \"_Ctrl\" );\n        break;\n        case \"Center\":\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -ty -3 3 -ety 1 1 ($sliderGrpName + \"_Ctrl\" );\n        break;\n        case \"Down\":\n            move -r 0 -3 0;\n            makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n            transformLimits -ty 0 6 -ety 1 1 ($sliderGrpName + \"_Ctrl\" );\n        break;\n    }\n    \n    LockAttr($sliderGrpName + \"_Ctrl\" , \".tx\");\n    LockAttr($sliderGrpName + \"_Ctrl\" , \".v\");\n    LockAttr($sliderGrpName + \"_Ctrl\" , \".tz\");\n    LockAttr($sliderGrpName + \"_Ctrl\" , \".rx\");\n    LockAttr($sliderGrpName + \"_Ctrl\" , \".ry\");\n    LockAttr($sliderGrpName + \"_Ctrl\" , \".rz\");\n    LockAttr($sliderGrpName + \"_Ctrl\" , \".sx\");\n    LockAttr($sliderGrpName + \"_Ctrl\" , \".sy\");\n    LockAttr($sliderGrpName + \"_Ctrl\" , \".sz\");\n    \n    select ( $sliderGrpName + \"_Base\" ) ($sliderGrpName + \"_Ctrl\" );\n    group -name ($sliderGrpName + \"_Base_Grp\" );\n}\n\n//Creates the Base box for the Box type control and calls the CreateControlBox to create the control.\nproc  CreateBaseBox( string $isRect, string $controlPosition, string $baseName) {\n    string $curve;\n    if( $isRect == \"false\") {\n        $curve = `curve -d 1 -p -3 3 0 -p 3 3 0 -p 3 -3 0 -p -3 -3 0 -p -3 3 0 -k 0 -k 1 -k 2 -k 3 -k 4` ;\n    }\n    else {\n        $curve = `curve -d 1 -p -4.5 3 0 -p 4.5 3 0 -p 4.5 -3 0 -p -4.5 -3 0 -p -4.5 3 0 -k 0 -k 1 -k 2 -k 3 -k 4 `;\n    }\n\n    rename $curve ( $baseName+\"_Base\" ) ;\n    toggle -state on -template;\n    makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;\n        \n    $curve = CreateControlBox( $baseName , $controlPosition , $isRect);\n    \n    select ($baseName+\"_Base\") ($baseName+\"_Ctrl\");\n    group -name ($baseName + \"_Base_Grp\");\n}\n\n//Checks what all controls are selected and creates them accordingly.\nproc CreateControl( string $controlName ){\n    string $grpName;\n\n    switch($controlName) {\n        \n        case \"Mouth\":\n        if(!`objExists Mouth_Ctrl_Grp`) {\n            CreateBaseBox(\"false\", \"Right\", \"Mouth_R_Box\"); \n            move -r -os -wd -4 0 0 ;\n            \n            CreateBaseBox(\"false\",\"Left\", \"Mouth_L_Box\");\n            move -r -os -wd 4 0 0 ;    \n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"R\");\n            move -rpr -xy -4 0 ;\n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"L\");\n            move -rpr -xy 4 0 ;\n        \n            CreateTextCurves(\"Rod|w300|h-6\",\"Mouth\");\n            move -rpr -xy 0 4.5 ;\n        \n            select Mouth_R_Box_Base_Grp Mouth_L_Box_Base_Grp R_Text L_Text Mouth_Text;\n            group -name \"Mouth_Ctrl_Grp\";\n            select -cl;\n        }\n        break; \n        case \"Jaw\":\n        if(!`objExists JawCtrl_Grp`) {\n            CreateBaseBox(\"false\",\"Center\", \"Jaw_Box\");  \n             \n            CreateTextCurves(\"Rod|w300|h-6\",\"Jaw\");\n            move -rpr -xy 0 4.5 ;\n\n            select Jaw_Box_Base_Grp Jaw_Text ;\n            group -name \"JawCtrl_Grp\";\n        \n            move -r 0 -10 0;\n            select -cl;\n        }\n        break;         \n        case \"JawDrop\":\n        \n        if(!`objExists JawDrop_Grp`) {\n            CreateSlider(\"JawDrop_Slider\", \"Up\");\n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"JawDrop\");\n            move -rpr -xy 0 4.5;\n            \n            select JawDrop_Slider_Base_Grp JawDrop_Text;\n            group -name \"JawDrop_Grp\";\n            \n            move -r -8 -10 0;\n           select -cl;\n        }\n        break;         \n        case \"LipIn_Out\":\n        \n        if(!`objExists LipIn_Out_Grp`) {\n            CreateSlider(\"LipIn_Out_Slider\", \"Center\");\n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"LipIn_Out\");\n            move -rpr -xy 0 4.5;\n            \n            select LipIn_Out_Slider_Base_Grp LipIn_Out_Text;\n            group -name \"LipIn_Out_Grp\";\n            \n            move -r 12 0 0;\n            select -cl;\n        }\n        break;         \n        case \"Sticky_Lips\":\n        \n        if(!`objExists Sticky_Lips_Grp`) {\n            CreateSlider(\"Sticky_Lips_Slider\", \"Up\");\n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"Sticky_Lips\");\n            move -rpr -xy 0 4.5;\n            \n            select Sticky_Lips_Slider_Base_Grp Sticky_Lips_Text;\n            group -name \"Sticky_Lips_Grp\";\n            \n            move -r 10 -10 0;            \n        }\n        break;         \n        case \"Blow\" :\n        \n        if(! `objExists Blow_Grp`) {\n            CreateSlider(\"Blow_Slider\", \"Down\");\n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"Blow\");\n            move -rpr -xy 0 4.5;\n            \n            select Blow_Slider_Base_Grp Blow_Text;\n            group -name \"Blow_Grp\";   \n            \n            move -r 19 -10 0;      \n        }\n\n        break;         \n        case \"Sync\":\n        \n        if (! `objExists Sync_Grp`) {\n            CreateBaseBox(\"false\", \"Center\", \"Sync_Box\"); \n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"Sync\");\n            move -rpr -xy 0 4.5;\n            \n            select Sync_Box_Base_Grp Sync_Text;\n            group -name \"Sync_Grp\";   \n            \n            move -r 0 -20 0;                  \n        }\n\n        break;         \n        case \"F\" :\n        \n        if(! `objExists F_Grp`) {\n            CreateSlider(\"F_Slider\", \"Down\");\n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"F\");\n            move -rpr -xy 0 4.5;\n            \n            select F_Slider_Base_Grp F_Text;\n            group -name \"F_Grp\"; \n            \n            move -r 10 -20 0;             \n        }\n\n        break;         \n        case \"Kiss\":\n        \n        if (! `objExists Kiss_Grp`) {\n            CreateSlider(\"Kiss_Slider\", \"Down\");\n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"Kiss\");\n            move -rpr -xy 0 4.5;\n            \n            select Kiss_Slider_Base_Grp Kiss_Text;\n            group -name \"Kiss_Grp\"; \n            \n            move -r 19 -20 0;            \n        }\n\n        break;         \n        case \"Tongue\":\n        \n        if(! `objExists Tongue_Grp`){\n            CreateBaseBox(\"false\", \"Center\", \"Tongue_Move_Box\");\n            move -r -3 0 0;\n            CreateTextCurves(\"Rod|w300|h-6\",\"Tongue\");\n            move -rpr -xy 0 4.5;\n            CreateSlider(\"Tongue_Roll_Slider\", \"Center\");\n            move -r 3 0 0;\n            \n            select Tongue_Move_Box_Base_Grp Tongue_Roll_Slider_Base_Grp Tongue_Text;\n            group -name \"Tongue_Grp\";\n            move -r -11 -20 0;\n        }\n        break;         \n        case \"Sneer\" :\n        \n        if(! `objExists Sneer_Grp`) {\n            CreateBaseBox(\"true\", \"Down\",\"Sneer_Box\");\n            CreateTextCurves(\"Rod|w300|h-6\",\"Sneer\");\n            move -rpr -xy 0 4.5;\n            \n            select Sneer_Box_Base_Grp Sneer_Text;\n            group -name \"Sneer_Grp\"; \n            \n            move -r -14 0 0;           \n        }\n\n        break;         \n        case \"SecCtrl\":\n        if(! `objExists SecCtrl_Grp`) {\n            CreateSlider(\"SecCtrl_Slider\", \"Up\");\n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"SecCtrl\");\n            move -rpr -xy 0 4.5;\n            \n            select SecCtrl_Slider_Base_Grp SecCtrl_Text;\n            group -name \"SecCtrl_Grp\";\n            \n            move -r -16 -10 0;             \n        }\n\n        break;         \n        case \"Squint\":\n        if(! `objExists Squint_Grp`) {\n            CreateBaseBox(\"true\",\"Down\",\"Squint_Box\");\n            \n            CreateTextCurves(\"Rod|w300|h-6\",\"Squint\");\n            move -rpr -xy 0 4.5;\n            \n            select Squint_Box_Base_Grp Squint_Text;\n            group -name \"Squint_Grp\";\n            \n            move -r 0 10 0;\n        }\n        break;         \n        case \"PupilDrag\":\n        \n        if(! `objExists PupilDrag_Grp`) {\n            CreateSlider(\"PupilDrag_R_Slider\", \"Down\");\n            move -rpr -xy -2 0;\n            \n            CreateSlider(\"PupilDrag_L_Slider\", \"Down\");\n            move -rpr -xy 2 0;\n                        \n            CreateTextCurves(\"Rod|w300|h-6\",\"PupilDrag\");\n            move -rpr -xy 0 4.5;\n            \n            select PupilDrag_R_Slider_Base_Grp PupilDrag_L_Slider_Base_Grp PupilDrag_Text;\n            group -name \"PupilDrag_Grp\";\n            move -r -14 10 0;\n        }\n        break; \n        \n        case \"Eye_Str_Sq\":\n        \n        if(!`objExists Eye_Str_Sq_Grp`) {\n            CreateSlider(\"Eye_Str_Sq_R_Slider\", \"Center\");\n            move -rpr -xy -2 0;\n            \n            CreateSlider(\"Eye_Str_Sq_L_Slider\", \"Center\");\n            move -rpr -xy 2 0;\n                        \n            CreateTextCurves(\"Rod|w300|h-6\",\"Eye_Str_Sq\");\n            move -rpr -xy 0 4.5;\n            \n            select Eye_Str_Sq_R_Slider_Base_Grp Eye_Str_Sq_L_Slider_Base_Grp Eye_Str_Sq_Text;\n            group -name \"Eye_Str_Sq_Grp\";\n            move -r 15 10 0;            \n        }\n        break;\n    \n        case \"EyePop\":\n    \n        if(! `objExists EyePop_Grp`) {\n                CreateSlider(\"EyePop_R_Slider\", \"Down\");\n                move -rpr -xy -2 0;\n            \n                CreateSlider(\"EyePop_L_Slider\", \"Down\");\n                move -rpr -xy 2 0;\n                        \n                CreateTextCurves(\"Rod|w300|h-6\",\"EyePop\");\n                move -rpr -xy 0 4.5;\n            \n                select EyePop_R_Slider_Base_Grp EyePop_L_Slider_Base_Grp EyePop_Text;\n                group -name \"EyePop_Grp\";\n                move -r -14 30 0;          \n        }\n        break;\n        \n        case \"EyeBrow\":\n        \n        if(! `objExists EyeBrow_Grp`){\n            CreateSlider(\"EyeBrow_R1_Slider\",\"Center\");\n            move -r -6 0 0;\n            CreateSlider(\"EyeBrow_R2_Slider\",\"Center\");\n            move -r -4 0 0;\n            CreateSlider(\"EyeBrow_R3_Slider\",\"Center\");\n            move -r -2 0 0;\n            CreateSlider(\"EyeBrow_Center_Slider\",\"Center\");\n            move -r 0 -1 0;\n            CreateSlider(\"EyeBrow_L1_Slider\",\"Center\");\n            move -r 2 0 0;\n            CreateSlider(\"EyeBrow_L2_Slider\",\"Center\");\n            move -r 4 0 0;\n            CreateSlider(\"EyeBrow_L3_Slider\",\"Center\");\n            move -r 6 0 0;\n            CreateTextCurves(\"Rod|w300|h-6\",\"EyeBrow\");\n            move -rpr -xy 0 4.5;\n            \n            select EyeBrow_R1_Slider_Base_Grp EyeBrow_R2_Slider_Base_Grp EyeBrow_R3_Slider_Base_Grp EyeBrow_Center_Slider_Base_Grp\n                    EyeBrow_L1_Slider_Base_Grp EyeBrow_L2_Slider_Base_Grp EyeBrow_L3_Slider_Base_Grp EyeBrow_Text;\n            group -name \"EyeBrow_Grp\";\n            move -r 0 30 0;\n        }\n        break;\n        \n        case \"PupilScale\" :\n        \n        if (! `objExists PupilScale_Grp`) {\n            CreateSlider(\"PupilScale_L_Slider\", \"Center\");\n            move -r 2 0 0;\n            CreateSlider(\"PupilScale_R_Slider\",\"Center\");\n            move -r -2 0 0;\n            CreateTextCurves(\"Rod|w300|h-6\",\"PupilScale\");\n            move -rpr -xy 0 4.5;\n            \n            select PupilScale_L_Slider_Base_Grp PupilScale_R_Slider_Base_Grp PupilScale_Text;\n            group -name \"PupilScale_Grp\";\n            move -r -14 20 0;\n            \n        }\n        break;\n        \n        case \"Blink\":\n        \n        if (! `objExists Blink_Grp`) {\n            CreateSlider(\"Blink_L_Slider\", \"Down\" );\n            move -r 2 0 0;\n            CreateSlider(\"Blink_R_Slider\", \"Down\");\n            move -r -2 0 0;\n            CreateTextCurves(\"Rod|w300|h-6\", \"Blink\");\n            move -rpr -xy 0 4.5;\n            \n            select Blink_L_Slider_Base_Grp Blink_R_Slider_Base_Grp Blink_Text;\n            group -name \"Blink_Grp\";\n            move -r 15 20 0;\n        }\n        break;\n        \n        case \"Eye\":\n        \n        if(! `objExists Eye_Grp`) {\n            CreateSlider(\"Eye_R1_Slider\", \"Center\");\n            move -r -7 0 0;\n            CreateSlider(\"Eye_R2_Slider\", \"Center\");\n            move -r -5 0 0;\n            CreateBaseBox(\"false\", \"Center\", \"Eye_Box\");\n            CreateSlider(\"Eye_L1_Slider\", \"Center\");\n            move -r 5 0 0;\n            CreateSlider(\"Eye_L2_Slider\", \"Center\");\n            move -r 7 0 0;\n            CreateTextCurves(\"Rod|w300|h-6\" , \"Eye\");\n            move -rpr -xy 0 4.5;\n            \n            select Eye_L1_Slider_Base_Grp Eye_L2_Slider_Base_Grp Eye_R1_Slider_Base_Grp \n                    Eye_R2_Slider_Base_Grp Eye_Box_Base_Grp Eye_Text;\n            group -name \"Eye_Grp\";\n            move -r 0 20 0;\n        }\n        break;\n    }\n}\n\n//Calls the CreateControl function for each selected Item\nproc CreateGUI(){\n    string $selecteditems[] = `textScrollList -q -allItems selectedControlsList`;\n\n    for($each in $selecteditems ) {\n        CreateControl( $each );\n    }\n}\n\n//Creates the control as per the user inputs.\nproc CreateNewControls(){\n\n    int $i;\n    int $j;\n    string $ctrlName = `textField -q -text ctrlNameText`;\n    int $numBox = `optionMenuGrp -q -value numBoxCtrlOptionGrp`;\n    int $numSlider = `optionMenuGrp -q -value numSliderCtrlOptionGrp `;\n    string $boxCtrlPos = `optionMenuGrp -q -value boxCtrlPosGrp` ;\n    string $sliderCtrlPos = `optionMenuGrp -q -value sliderCtrlPosGrp` ;\n    int $isRectInt = `checkBox -q -v isRectCheckBox`;\n    string $isRect;\n    \n    if (!(($numBox == 0) && ($numSlider == 0))) {\n    if (`objExists ($ctrlName + \"_Grp\")` ) {\n        error \"Please enter a unique name for the control!\";\n    }\n    \n    else {\n    if($isRectInt == 1){ $isRect = \"true\"; }\n    else { $isRect = \"false\"; }\n\n    CreateTextCurves(\"Rod|w300|h-6\" , $ctrlName );\n    move -rpr -xy 0 4.5;\n    for (  $i =0;$i < $numBox ; $i ++ ) {\n       CreateBaseBox($isRect, $boxCtrlPos ,$ctrlName +\"_Box\"+($i+1) );\n        move -r (8*$i) 0 0;\n    }\n    \n    for (  $j =0;$j < $numSlider ; $j ++ ) {\n        CreateSlider($ctrlName + \"_Slider\"+($j+1) , $sliderCtrlPos );\n        move -r (6*$j) 0 0;\n    }\n    select -cl;\n    if($numBox == 0){\n    select ($ctrlName +\"_Slider*_Base_Grp\") ($ctrlName +\"_Text\");        \n    }\n    else if ($numSlider == 0) {\n    select ($ctrlName +\"_Box*_Base_Grp\") ($ctrlName +\"_Text\");        \n    }\n    else {\n    select ($ctrlName +\"_Box*_Base_Grp\") ($ctrlName +\"_Slider*_Base_Grp\") ($ctrlName +\"_Text\");\n    }\n    group -name ($ctrlName + \"_Grp\");\n    }\n    }\n}\n\n//Main Function.\nglobal proc vjFacialGUI(){\n    \n    if(`window -exists facialGUIWin`) {\n        deleteUI facialGUIWin;\n    }\n    \n    string $window = `window -title \"Create Facial Gui Controls\" facialGUIWin`;\n    string $availableControls[] = {\"Mouth\",\"Jaw\",\"JawDrop\",\"LipIn_Out\",\"Sticky_Lips\",\n                                    \"Blow\",\"Sync\",\"Sneer\",\"SecCtrl\",\"F\",\"Kiss\",\n                                    \"Tongue\",\"Squint\",\"Eye_Str_Sq\",\"PupilDrag\",\n                                    \"PupilScale\",\"Eye\",\"Blink\",\"EyeBrow\",\"EyePop\"};\n    \n    string $form = `formLayout`;\n    string $tabs = `tabLayout -innerMarginWidth 5 -innerMarginHeight 5`;\n    formLayout -edit\n     -attachForm $tabs \"top\" 5\n     -attachForm $tabs \"left\"   5\n     -attachForm $tabs \"bottom\" 5\n     -attachForm $tabs \"right\"  5\n     $form;\n\n    string $child1 = `rowColumnLayout -numberOfRows 7\n        -rowHeight 1 5\n        -rowHeight 2 30\n        -rowHeight 3 260\n        -rowHeight 4 5\n        -rowHeight 5 25\n        -rowHeight 6 5\n        -rowHeight 7 25 rc1`;\n        \n    text -label\"\";\n    text -label \"\\tAvailable GUI Controls\";\n    textScrollList -height 240 -numberOfRows 10 -width 150 -allowMultiSelection true availableControlsList;\n    text -label \"\";\n    button -command \"AppendSelectedItems();\" -label \"--->>>\" -width 50;\n    text -label \"\";\n    button -label \"Create\" -width 150 -command \"CreateGUI();select -cl;\";\n    \n    text -label \"\";\n    text -label \"\";\n    text -label \"\";\n    text -label \"\";\n    text -label \"\";\n    text -label \"\";\n    text -label \"\";\n    \n    text -label \"\";\n    text -label \"\\tSelected GUI Controls\";\n    textScrollList -height 240 -numberOfRows 10 -width 150 -allowMultiSelection true selectedControlsList;\n    text -label \"\";\n    button -command \"DeleteSelectedItems();\" -label \"<<<---\" -width 50;\n    text -label \"\";\n    button -label \"Close\" -width 150 -command \"deleteUI facialGUIWin\";\n    setParent..;\n    \n    string $child2 = `rowColumnLayout -nr 6 -rs 1 15 -rs 2 15 \n                        -rs 3 15 -rs 4 15 -rs 5 15 -rs 6 15`;\n\n    text -label \"ControlName : \";\n    text -label \"isRectangle? : \";\n    text -label \"No. of Box Ctrls : \";\n    text -label \"Box Ctrl Position : \";\n    text -label \"\";\n    text -label \"\";\n        \n    textField ctrlNameText;\n    checkBox -label \"\" isRectCheckBox;\n    optionMenuGrp -w 50 numBoxCtrlOptionGrp;\n    menuItem -label \"0\";\n    menuItem -label \"1\";\n    menuItem -label \"2\";\n    menuItem -label \"3\";\n    menuItem -label \"4\";\n    menuItem -label \"5\";\n    menuItem -label \"6\";\n    optionMenuGrp -w 50 boxCtrlPosGrp;\n    menuItem -label \"Up\";\n    menuItem -label \"Down\";\n    menuItem -label \"Right\";\n    menuItem -label \"Left\";\n    menuItem -label \"Center\";\n    text -label \"\";\n    button -label \"Create\" -command \"CreateNewControls();\";\n    \n    text -label \"\";\n    text -label \"\";\n    text -label \"No. of Slider Ctrls : \";\n    text -label \"Slider Ctrl Position : \";\n    text -label \"\";\n    text -label \"\";\n    \n    \n    text -label \"\";\n    text -label \"\";\n    optionMenuGrp -w 50 numSliderCtrlOptionGrp ;\n    menuItem -label \"0\";\n    menuItem -label \"1\";\n    menuItem -label \"2\";\n    menuItem -label \"3\";\n    menuItem -label \"4\";\n    menuItem -label \"5\";\n    menuItem -label \"6\";\n    optionMenuGrp  sliderCtrlPosGrp;\n    menuItem -label \"Up\";\n    menuItem -label \"Down\";\n    menuItem -label \"Center\";\n    text -label \"\";\n    button -label \"Close\" -command \"deleteUI facialGUIWin;\";\n    setParent..;\n\n    tabLayout -edit -tabLabel $child1 \"ReadyMade Controls\" -tabLabel $child2 \"Create Your Own!\" $tabs;\n \n    \n    for($each in $availableControls) {\n        textScrollList -e -append $each availableControlsList;\n    }\n\n    showWindow facialGUIWin;\n    window -e -widthHeight 402 400 facialGUIWin; \n} vjFacialGUI();\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Texture coordinate mapping view" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "UV Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "textureEditor.png" 
+        -image1 "textureEditor.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "TextureViewWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Attribute..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "AA" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "AddAttribute" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Rename attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Edit Attribute..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "EA" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "RenameAttribute" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Delete attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Delete Attribute..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "DA" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "DeleteAttribute" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "string $selectedLocators[] = `ls -sl`;\nint $selectionSize = size($selectedLocators);\nint $i;\n\n//rename locators temp\nfor ($locatorName in $selectedLocators)\n{\nrename $locatorName tempName_loc;\n};\n\n//create appropriate number of joints\nif ($selectionSize >=1)\n{\nfor ($i = 1; $i <= $selectionSize; ++$i)\n{select -cl;\njoint;\n}\n}\nelse\n{error (\"Please select locators\");}\n\n//rename joints temp\nselect \"joint*\";\nstring $createdJoints[] = `ls -sl`;\n\nfor ($jointName in $createdJoints)\n{\nrename $jointName tempName_joint;\n}" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "string $selectedLocators[] = `ls -sl`;\nint $selectionSize = size..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "string $selectedLocators[] = `ls -sl`;\nint $selectionSize = size($selectedLocators);\nint $i;\n\n//rename locators temp\nfor ($locatorName in $selectedLocators)\n{\nrename $locatorName tempName_loc;\n};\n\n//create appropriate number of joints\nif ($selectionSize >=1)\n{\nfor ($i = 1; $i <= $selectionSize; ++$i)\n{select -cl;\njoint;\n}\n}\nelse\n{error (\"Please select locators\");}\n\n//rename joints temp\nselect \"joint*\";\nstring $createdJoints[] = `ls -sl`;\n\nfor ($jointName in $createdJoints)\n{\nrename $jointName tempName_joint;\n}" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 23
+        -height 23
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Time Editor" 
+        -enableBackground 1
+        -backgroundColor 0 1 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Time Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "TIMEed" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "getCTE.png" 
+        -image1 "getCTE.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "TimeEditorWindow" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 
